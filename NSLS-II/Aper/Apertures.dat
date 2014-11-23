@@ -1,0 +1,5 @@
+# name  dxmin  dxmax  dymin   dymax  (Apertures in meters)
+all    -50e-3  50e-3  -25e-3   25e-3
+d0id   -20e-3  20e-3  -2.5e-3  2.5e-3
+D_DW   -20e-3  20e-3  -5e-3   5e-3
+D_MGU  -20e-3  20e-3  -2.5e-3  2.5e-3

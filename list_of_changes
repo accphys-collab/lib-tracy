@@ -1,0 +1,134 @@
+//Nothing was removed from orginal version Tracy-3.5
+//The orginal nr code is in block comments starting with /*Orginal
+//The GSL adds are marked by '//GSL add' for beginign and '//end GSL add' at the end of chagnes 
+
+4.
+In file: tracy/src/Makefile.am
+at the end of line 7 was added -I/usr (for gsl libraries)
+
+1.
+In file: tracy/src/tracy_lib.h
+added lines 32-37
+
+6.
+In file: tracy/inc/tracy_global.h
+added lines 157-160
+
+13.
+In file: tracy/inc/tracy_blobal.h
+added line 134
+
+2.
+In folder tracy/inc/
+added header file gslport.h
+
+7. (ok)
+In file: tracy/src/t2lat.cc
+in function Lat_DealElement(), lines 3299-3311
+
+9. (ok)
+In file: tracy/src/rdmfile.cc
+in function rdmfile(), lines 328-345
+
+5.
+In file: tracy/src/nsls-ii_lib.cc
+in line: 3883 lefthand brace
+in line: 3884 lefthand brace
+in line: 3885 righthand brace
+in line: 3901 righthand brace
+
+10.(ok)
+In file: tracy/src/nsls-ii_lib.cc
+in function FindMatrix() 2258
+
+11. 
+In file: tracy/src/nsls-ii_lib.cc
+added lines 82,83 (ok)
+in function ini_skew_cor() 2433 (ok)
+in function ini_ID_corr() 3122 (ok) added lines 3081-3100
+in function ID_corr() 3224 (ok) added lines 3222-3229
+in function FindCoupVector() 2433 (ok) added line 2506, added lines 2512-2516, added lines 2574, 2575
+
+25.
+In file tracy/src/nsls-ii_lib.cc
+in function FindSQ_SVDmat() 2222 (ok)
+
+26
+In file tracy/src/nsls-ii_lib.cc
+in function corr_eps_y() 2649 (ok)
+
+27.
+In file tracy/src/nsls-ii_lib.cc
+in function SVD() 2807 (ok)
+in functions Touschek() (ok) (two functions) 3675, 3781 
+
+30.
+In file /tracy/src/nsls-ii_lib.cc
+in function bend_cal_Fam() (ok) 4524
+in function f_bend() (ok) 4485
+
+3.
+In file: tracy/src/t2elem.cc
+lines added in function K_fun();
+in function det_mat();
+added function det_mat_gsl();
+added function trace_mat_gsl();
+
+
+12.
+In file: tracy/src/t2elem.cc
+added lines 3356-3366
+added lines 3533-3543
+added lines 3674-3684
+added lines 3819-3824
+
+
+
+14.
+In file: tracy/src/t2elem.cc
+added lines 3344-3351
+added lines 3532-3539
+added lines 3684-3691
+added lines 3845-3852
+
+15.
+In file: trac/src/t2elem.cc
+added lines 388-424
+added lines 544-551
+
+16.
+In file: tracy/src/t2elem.cc
+added lines 455-459
+added lines 499-503
+
+17.
+In file: tracy/src/t2elem.cc
+added line 485
+added line 526
+
+18.
+In file tracy/src/t2elem.cc
+added lines 3335-3339
+
+19.
+In file tracy/src/t2elem.cc
+in function do_IBS()
+
+28.
+In file tracy/src/t2elem.cc
+in function K_fun()
+in function do_IBS()
+
+22. (ok)
+In file tracy/src/lsoc.cc
+added lines 18, 19
+in function gcmat()
+in function lsoc() at line 296
+in function lsoc1() 
+in function gcmat1()
+
+
+24. (ok)
+In file tracy/src/physlib.cc
+in function Newton_RaphsonS(), starting from line 3010
+in functions sin_FFT() (two functions)

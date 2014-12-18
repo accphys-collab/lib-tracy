@@ -3916,6 +3916,24 @@ float f_int_IBS(const float chi)
 }
 
 
+// J.B. 11/12/14 ->
+
+//Add
+//This method had to be overwritten because of gsl integration construction
+double gsl_f_int_IBS(double chi, void *params)
+{
+ double alpha = *(double *) params;
+  double  f;
+
+  f = exp(-chi)*log(chi/chi_m)/chi;
+
+  return alpha*f;
+} 
+//end add
+
+// <- J.B. 11/12/14.
+
+
 void IBS(const double Qb,
 	 const double eps_SR[], double eps[],
 	 const double alpha_z, const double beta_z)
@@ -3997,8 +4015,29 @@ void IBS(const double Qb,
 
     if (!integrate)
       incr = f_IBS(chi_m)/sigma_y*L;
-    else
+    else {
+      /*Orginal
       incr = qromb(f_int_IBS, chi_m, 1e5*chi_m)/sigma_y*L;
+      */
+	
+      // J.B. 11/12/14 ->
+
+      //GSL Add
+      double result, error;
+      double alpha = 1.0;
+      gsl_function F;
+      F.function = &gsl_f_int_IBS;
+      F.params = &alpha;
+	
+      gsl_integration_workspace * w = gsl_integration_workspace_alloc (1000);
+      gsl_integration_qags (&F, 0, 1.0, 0, 1e-7, 1000, w, &result, &error);
+	
+      incr += result;
+      gsl_integration_workspace_free (w);		
+      //end GSL add
+
+      // <- J.B. 11/12/14.
+	  }
 
     D_delta += incr; D_x += incr*curly_H;
   }

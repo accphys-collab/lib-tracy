@@ -83,6 +83,8 @@ double ***gslport_tensor(int t1, int t2, int r1, int r2, int s1, int s2) {
 long unsigned int *gslport_lvector(int s, int e) {
 	
 	long unsigned int *data = (long unsigned int*)malloc((e+1)*sizeof(long unsigned int));
+	
+	return data;
 
 }
 
